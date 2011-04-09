@@ -49,11 +49,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>-- Toggles Mac OS X Finder's ability to display hidden files.
--- Created by Austen Conrad http://ARConrad.com 
--- Feel free to use and modify to your heart's content. No warranty provided.
-on run {input, parameters}		display dialog "Toggle visibility of hidden files? (finder will restart)" buttons {"Cancel", "Toggle"} default button 1		-- If the user selected the "Toggle" button continue.	if button returned of result is "Toggle" then		try			-- Lookup the current hidden file mode.			set hiddenFileMode to do shell script "defaults read com.apple.finder AppleShowAllFiles"						-- Toggle the finder bundle's AppleShowAllFiles setting aka hidden file setting.			if hiddenFileMode is "ON" then				do shell script "defaults write com.apple.finder AppleShowAllFiles OFF"			else				do shell script "defaults write com.apple.finder AppleShowAllFiles ON"			end if						-- Tell Finder to terminate.			tell application "Finder" to quit						-- Ensure Finder has had time to terminate fully.			delay 1						-- Restart Finder.			tell application "Finder" to activate						-- If this is the first time this has been run we need to add AppleShowFiles to the com.apple.finder bundle.		on error			do shell script "defaults write com.apple.finder AppleShowAllFiles ON"		end try	end if		-- Repoll the finder bundle's AppleShowAllFiles setting now that we have updated it.	set updatedhiddenFileMode to do shell script "defaults read com.apple.finder AppleShowAllFiles"		-- Return the new value of finder bundle's AppleShowAllFiles setting 	return updatedhiddenFileMode
-	end run</string>
+					<string>-- Toggles Mac OS X Finder's ability to display hidden files.-- Created by Austen Conrad http://ARConrad.com -- Feel free to use and modify to your heart's content. No warranty provided.on run {input, parameters}		display dialog "Toggle visibility of hidden files? (finder will restart)" buttons {"Cancel", "Toggle"} default button 1		-- If the user selected the "Toggle" button continue.	if button returned of result is "Toggle" then		try			-- Lookup the current hidden file mode.			set hiddenFileMode to do shell script "defaults read com.apple.finder AppleShowAllFiles"						-- Toggle the finder bundle's AppleShowAllFiles setting aka hidden file setting.			if hiddenFileMode is "ON" then				do shell script "defaults write com.apple.finder AppleShowAllFiles OFF"			else				do shell script "defaults write com.apple.finder AppleShowAllFiles ON"			end if						-- Tell Finder to terminate.			tell application "Finder" to quit						-- Ensure Finder has had time to terminate fully.			delay 1						-- Restart Finder.			tell application "Finder" to activate						-- If this is the first time this has been run we need to add AppleShowFiles to the com.apple.finder bundle.		on error			do shell script "defaults write com.apple.finder AppleShowAllFiles ON"		end try	end if		-- Repoll the finder bundle's AppleShowAllFiles setting now that we have updated it.	set updatedhiddenFileMode to do shell script "defaults read com.apple.finder AppleShowAllFiles"		-- Return the new value of finder bundle's AppleShowAllFiles setting 	return updatedhiddenFileMode	end run</string>
 				</dict>
 				<key>Application</key>
 				<array>
@@ -113,7 +109,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>441.000000:713.000000</string>
+				<string>448.500000:561.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -191,12 +187,16 @@ end run</string>
 			</array>
 		</dict>
 		<key>windowFrame</key>
-		<string>{{473, 215}, {1278, 884}}</string>
+		<string>{{358, 186}, {1278, 884}}</string>
 		<key>workflowViewScrollPosition</key>
-		<string>{{0, 96}, {882, 616}}</string>
+		<string>{{0, 0}, {897, 616}}</string>
 	</dict>
 	<key>workflowMetaData</key>
 	<dict>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>serviceApplicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceOutputTypeIdentifier</key>
