@@ -15,10 +15,14 @@ Feel free to use and modify to your heart's content. Albeit no warranty is provi
 Install as a Mac OS X service by moving the Toggle Hidden File Visibility.workflow folder to:
 [your home directory]/Library/Services/Toggle Hidden File Visibility.workflow
 
-You can now use the service by going to the top menu and selecting:
-Finder => Services => Toggle Hidden File Visibility
+NOTE: Remember a .workflow file looks like a folder on github, but Mac OS X treats it as a bundled file.
+
+==== Usage ====
+
+When in a Finder window, go to the top menu and select:
+
+	Finder => Services => Toggle Hidden File Visibility
 
 NOTE: If you're in 'Open file' dialog you will need to use following keyboard shortcut instead (it's built into OS X):
-Command + Shift + .
+	Command + Shift + .
 
-NOTE 2: Remember a .workflow file looks like a folder on github, but Mac OS X treats it as a bundled file.
