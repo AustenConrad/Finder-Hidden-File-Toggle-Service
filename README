@@ -1,9 +1,13 @@
+Toggle Hidden File Visibility serivce for Mac OS X
+
+
 ==== About ====
+
 An Applescript-based Mac OS X service that toggles Finder's ability to display hidden files.
 
 Created by Austen Conrad http://ARConrad.com 
 
-Feel free to use and modify to your heart's content. Albeit no warranty provided.
+Feel free to use and modify to your heart's content. Albeit no warranty is provided.
 
 
 === Install ===
